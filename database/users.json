@@ -1,1 +1,16 @@
-{"users": {"login": ["admin", "user"], "password": ["admin", "user"], "access": ["admin", "user"]}}
+{
+  "users": {
+    "login": [
+      "admin",
+      "user"
+    ],
+    "password": [
+      "admin",
+      "user"
+    ],
+    "access": [
+      "admin",
+      "user"
+    ]
+  }
+}
