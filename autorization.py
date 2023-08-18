@@ -1,4 +1,5 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
+from database.users_database import Database
 
 class Window_autorization(object):
     def setupUi(self, MainWindow):
@@ -136,6 +137,18 @@ class Window_autorization(object):
         #очищаем поля ввода логина и пароля
         self.Lineedit_login.clear()
         self.Lineedit_password.clear()
+
+        db = Database()
+        user_in_database, message = db.find_user(login, password)
+
+        if user_in_database:
+            if message == 'admin':
+                MainWindow.close()
+                print('Заходим в админпанель...')
+            elif message == 'user':
+                MainWindow.close()
+                print('Заходим в программу...')
+
 
 
 
