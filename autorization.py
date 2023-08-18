@@ -141,13 +141,20 @@ class Window_autorization(object):
         db = Database()
         user_in_database, message = db.find_user(login, password)
 
+        #если логин и пароль правильны
         if user_in_database:
+            #открываем админ-панель
             if message == 'admin':
                 MainWindow.close()
-                print('Заходим в админпанель...')
+            #открываем программу с обычным уровнем доступа
             elif message == 'user':
                 MainWindow.close()
-                print('Заходим в программу...')
+        else:
+            self.label_error = QtWidgets.QLabel(parent=self.centralwidget)
+            self.label_error.setGeometry(QtCore.QRect(510, 190, 190, 30))
+            self.label_error.setStyleSheet('background-color: rgba(39, 176, 87, 0.9); border: 1px solid rgba(255,255,255,40); border-radius: 7px; color: white;')
+            self.label_error.setText(message)
+            self.label_error.show()
 
 
 

@@ -26,19 +26,12 @@ class Database():
                 json_writer.write(db)
 
     def find_user(self, enter_login: str, enter_password):
-        true_enter_login = False
-        true_enter_password = False
         with open('database/users.json', 'r', encoding='utf-8') as json_reader:
             db = json.load(json_reader)
             for i in range(len(db['users']['login'])):
-                if enter_login == db['users']['login'][i]:
-                    true_enter_login = True
-                    if enter_password == db['users']['password'][i]:
-                        return True, db['users']['access'][i]
-            if true_enter_login is False:
-                return False, f"Неверный логин."
-            elif true_enter_login is True and true_enter_password is False:
-                return False, f"Неверный пароль."
+                if enter_login == db['users']['login'][i] and enter_password == db['users']['password'][i]:
+                    return True, db['users']['access'][i]
+            return False, 'Неверный логин или пароль'
 
     def get_database(self) -> str:
         with open('database/users.json', 'r', encoding='utf-8') as json_reader:
