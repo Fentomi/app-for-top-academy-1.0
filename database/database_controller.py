@@ -58,7 +58,7 @@ class Database():
         with open(self.path, 'r', encoding='utf-8') as json_reader:
             return json.load(json_reader)
     #действия с типами обучения
-    def create_learntype(self, learntype: str, learntime=[]) -> None:
+    def create_learntype(self, learntype: str, learntime="") -> None:
         with open(self.path, 'r', encoding='utf-8') as json_reader:
             db = json.load(json_reader)
             with open(self.path, 'w', encoding='utf-8') as json_writer:
@@ -78,11 +78,42 @@ class Database():
                 db = json.dumps(db, indent=self.indent_for_json)
                 json_writer.write(db)
     def get_current_learntypedata(self) -> list:
-        return self.get_database()['learn']['learntype']
+        data = self.get_database()['learn']['learntype']
+        return data
     #действия со сроками обучения
+    def create_learntime(self, learntype: str, learntime: str) -> None:
+        with open(self.path, 'r', encoding='utf-8') as json_reader:
+            db = json.load(json_reader)
+            with open(self.path, 'w', encoding='utf-8') as json_writer:
+                for item in db['learn']['learntype']:
+                    if item['name'] == learntype:
+                        item['learntime'] = learntime
+
+                db = json.dumps(db, indent=self.indent_for_json)
+                json_writer.write(db)
+    def delete_learntime(self, learntype: str):
+        with open(self.path, 'r', encoding='utf-8') as json_reader:
+            db = json.load(json_reader)
+            with open(self.path, 'w', encoding='utf-8') as json_writer:
+                for item in db['learn']['learntype']:
+                    if item['name'] == learntype:
+                        item['learntime'] = ''
+
+                db = json.dumps(db, indent=self.indent_for_json)
+                json_writer.write(db)
+
 def main():
     db = Database()
     db.path = r'database.json'
+    # db.db_reset()
+    #
+    # db.create_learntype('МКА', '12 месяцев')
+    # db.create_learntype('ПШ', '20 месяцев')
+    # db.delete_learntime('ПШ')
+    #
+    # print(db.get_current_learntypedata())
+
+
 
 
 if __name__ == '__main__':
