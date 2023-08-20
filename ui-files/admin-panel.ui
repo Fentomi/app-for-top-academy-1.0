@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>848</width>
+    <width>888</width>
     <height>600</height>
    </rect>
   </property>
@@ -134,26 +134,10 @@ color: white;</string>
      <string>Удалить пользователя</string>
     </property>
    </widget>
-   <widget class="QTableView" name="tableView_users">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>440</y>
-      <width>231</width>
-      <height>141</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
-border: 1px solid rgba(255,255,255, 0.4);
-border-radius: 6px;
-color: white;</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>370</x>
       <y>90</y>
       <width>231</width>
       <height>201</height>
@@ -178,7 +162,7 @@ color: white;</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>380</x>
       <y>90</y>
       <width>211</width>
       <height>31</height>
@@ -200,7 +184,7 @@ color: white;</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>370</x>
       <y>300</y>
       <width>231</width>
       <height>171</height>
@@ -225,7 +209,7 @@ color: white;</string>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>380</x>
       <y>310</y>
       <width>211</width>
       <height>31</height>
@@ -247,7 +231,7 @@ color: white;</string>
    <widget class="QPushButton" name="btn_add_learntype">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>380</x>
       <y>390</y>
       <width>211</width>
       <height>31</height>
@@ -266,7 +250,7 @@ color: white;</string>
    <widget class="QPushButton" name="btn_delete_learntype">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>380</x>
       <y>430</y>
       <width>211</width>
       <height>31</height>
@@ -285,7 +269,7 @@ color: white;</string>
    <widget class="QLineEdit" name="lineEdit_learntype">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>380</x>
       <y>350</y>
       <width>211</width>
       <height>31</height>
@@ -304,7 +288,7 @@ color: white;</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>620</x>
       <y>90</y>
       <width>231</width>
       <height>201</height>
@@ -329,7 +313,7 @@ color: white;</string>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>630</x>
       <y>90</y>
       <width>211</width>
       <height>31</height>
@@ -351,7 +335,7 @@ color: white;</string>
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>620</x>
       <y>300</y>
       <width>231</width>
       <height>171</height>
@@ -376,7 +360,7 @@ color: white;</string>
    <widget class="QLineEdit" name="lineEdit_learntime">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>630</x>
       <y>350</y>
       <width>211</width>
       <height>31</height>
@@ -395,7 +379,7 @@ color: white;</string>
    <widget class="QPushButton" name="btn_add_learntime">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>630</x>
       <y>390</y>
       <width>211</width>
       <height>31</height>
@@ -414,7 +398,7 @@ color: white;</string>
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>630</x>
       <y>310</y>
       <width>211</width>
       <height>31</height>
@@ -436,7 +420,7 @@ color: white;</string>
    <widget class="QPushButton" name="btn_delete_learntime">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>630</x>
       <y>430</y>
       <width>211</width>
       <height>31</height>
@@ -455,7 +439,7 @@ color: white;</string>
    <widget class="QTableView" name="tableView_learntype">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>380</x>
       <y>120</y>
       <width>211</width>
       <height>161</height>
@@ -471,7 +455,7 @@ color: white;</string>
    <widget class="QTableView" name="tableView_learntime">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>630</x>
       <y>120</y>
       <width>211</width>
       <height>161</height>
@@ -610,7 +594,7 @@ color: white;</string>
    <widget class="QPushButton" name="btn_exit">
     <property name="geometry">
      <rect>
-      <x>646</x>
+      <x>706</x>
       <y>540</y>
       <width>171</width>
       <height>41</height>
@@ -629,7 +613,7 @@ color: white;</string>
    <widget class="QPushButton" name="btn_logout">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>500</x>
       <y>540</y>
       <width>181</width>
       <height>41</height>
@@ -644,6 +628,36 @@ color: white;</string>
     <property name="text">
      <string>Разлогиниться</string>
     </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>440</y>
+      <width>311</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;</string>
+    </property>
+    <column>
+     <property name="text">
+      <string>login</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>password</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>access</string>
+     </property>
+    </column>
    </widget>
   </widget>
  </widget>
