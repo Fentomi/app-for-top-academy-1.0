@@ -436,38 +436,6 @@ color: white;</string>
      <string>Удалить срок обучения</string>
     </property>
    </widget>
-   <widget class="QTableView" name="tableView_learntype">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>120</y>
-      <width>211</width>
-      <height>161</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
-border: 1px solid rgba(255,255,255, 0.4);
-border-radius: 6px;
-color: white;</string>
-    </property>
-   </widget>
-   <widget class="QTableView" name="tableView_learntime">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>120</y>
-      <width>211</width>
-      <height>161</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
-border: 1px solid rgba(255,255,255, 0.4);
-border-radius: 6px;
-color: white;</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
@@ -658,6 +626,21 @@ border-radius: 6px;</string>
       <string>access</string>
      </property>
     </column>
+   </widget>
+   <widget class="QComboBox" name="comboBox_access_2">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>130</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.7);
+border: 1px solid rgba(255,255,255, 0.4);
+color: white;</string>
+    </property>
    </widget>
   </widget>
  </widget>

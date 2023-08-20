@@ -9,9 +9,13 @@ class Database():
         with open(self.path, 'w', encoding='utf-8') as json_writer:
             write = {
                 'users': {
-                    'login': [],
-                    'password': [],
-                    'access': []
+                    'login': ['admin'],
+                    'password': ['admin'],
+                    'access': ['admin']
+                },
+                'learn': {
+                    'learntype': [],
+                    'learntime': []
                 }
             }
             json_writer.write(json.dumps(write))
@@ -56,7 +60,7 @@ class Database():
 def main():
     db = Database()
     db.path = r'database.json'
-    db.load_current_userdata()
+    db.db_reset()
 
 if __name__ == '__main__':
     main()
