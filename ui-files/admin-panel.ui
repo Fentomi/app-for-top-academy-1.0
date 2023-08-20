@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>848</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>17</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Админ-панель</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, x2:0, stop:0 rgba(81, 0, 135, 255), stop:0.427447 rgba(41,61,132,235), stop:1 rgba(155,79,165,255));</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="present_label">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>30</y>
+      <width>591</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>17</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 1);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Здравствуйте, господин! Чего желаете?</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>90</y>
+      <width>231</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+    <property name="indent">
+     <number>-1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>90</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Действия с пользователями</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_add_user">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>350</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 1);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Добавить пользователя</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_delete_user">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>390</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 1);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Удалить пользователя</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tableView_users">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>440</y>
+      <width>231</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>90</y>
+      <width>231</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+    <property name="indent">
+     <number>-1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>90</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Действия с формами обучения</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>300</y>
+      <width>231</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+    <property name="indent">
+     <number>-1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>310</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Изменить форму обучения</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_add_learntype">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>390</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 1);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Добавить форму обучения</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_delete_learntype">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>430</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 1);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Удалить форму обучения</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_learntype">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>350</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.7);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>90</y>
+      <width>231</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+    <property name="indent">
+     <number>-1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>90</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Действия со сроками обучения</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>300</y>
+      <width>231</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+    <property name="indent">
+     <number>-1</number>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_learntime">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>350</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.7);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_add_learntime">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>390</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 1);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Добавить срок обучения</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>310</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Изменить сроки обучения</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_delete_learntime">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>430</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 1);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Удалить срок обучения</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tableView_learntype">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>120</y>
+      <width>211</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tableView_learntime">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>120</y>
+      <width>211</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.4);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>130</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 1);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Введите логин</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>200</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 1);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Введите пароль</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_login">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>160</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.7);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>270</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 1);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Выберите уровень доступа</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_access">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>300</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.7);
+border: 1px solid rgba(255,255,255, 0.4);
+color: white;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>admin</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>user</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_password">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>230</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 0.7);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_exit">
+    <property name="geometry">
+     <rect>
+      <x>646</x>
+      <y>540</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 1);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Выйти из программы</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_logout">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>540</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(39, 176, 87, 1);
+border: 1px solid rgba(255,255,255, 0.4);
+border-radius: 6px;
+color: white;</string>
+    </property>
+    <property name="text">
+     <string>Разлогиниться</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
