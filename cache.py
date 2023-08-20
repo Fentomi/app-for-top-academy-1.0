@@ -1,4 +1,13 @@
-list1 = ['Никита', 'Андрей']
-index = list1.index('Андрей')
-list1.pop(index)
-print(list1)
+write = {
+                'users': {
+                    'login': ['admin'],
+                    'password': ['admin'],
+                    'access': ['admin']
+                },
+                'learn': {
+                    'learntype': [{
+                        'name': '',
+                        'learntime': []
+                    }]
+                }
+            }

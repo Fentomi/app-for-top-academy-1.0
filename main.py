@@ -452,6 +452,8 @@ class Ui_adminpanel(object):
         self.btn_delete_learntype.clicked.connect(self.del_learntype)
         self.load_current_learntypedata()
 
+        self.comboBox_access_2.currentTextChanged.connect(self.change_item_in_learntype)
+
     def add_user_in_database(self):
         login = self.lineEdit_login.text()
         password = self.lineEdit_password.text()
@@ -505,8 +507,15 @@ class Ui_adminpanel(object):
         db = Database()
         data = db.get_current_learntypedata()
         for i in range(len(data)):
-            self.comboBox_access_2.addItem(data[i])
-
+            self.comboBox_access_2.addItem(data[i]['name'])
+    def change_item_in_learntype(self):
+        choice = self.comboBox_access_2.currentText()
+        #обновить строку
+        db = Database()
+        data = db.get_current_learntypedata()
+        for item in data:
+            if item['name'] == choice:
+                print(item)
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

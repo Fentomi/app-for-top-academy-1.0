@@ -14,8 +14,7 @@ class Database():
                     'access': ['admin']
                 },
                 'learn': {
-                    'learntype': [],
-                    'learntime': []
+                    'learntype': []
                 }
             }
             json_writer.write(json.dumps(write))
@@ -59,24 +58,28 @@ class Database():
         with open(self.path, 'r', encoding='utf-8') as json_reader:
             return json.load(json_reader)
     #действия с типами обучения
-    def create_learntype(self, learntype: str):
+    def create_learntype(self, learntype: str, learntime=[]) -> None:
         with open(self.path, 'r', encoding='utf-8') as json_reader:
             db = json.load(json_reader)
             with open(self.path, 'w', encoding='utf-8') as json_writer:
-                db['learn']['learntype'].append(learntype)
+                db['learn']['learntype'].append({
+                    'name': learntype,
+                    'learntime': learntime
+                })
                 db = json.dumps(db, indent=self.indent_for_json)
                 json_writer.write(db)
     def delete_learntype(self, learntype: str):
         with open(self.path, 'r', encoding='utf-8') as json_reader:
             db = json.load(json_reader)
             with open(self.path, 'w', encoding='utf-8') as json_writer:
-                index = db['learn']['learntype'].index(learntype)
-                db['learn']['learntype'].pop(index)
+                for i in range(len(db['learn']['learntype'])):
+                    if db['learn']['learntype'][i]['name'] == learntype:
+                        db['learn']['learntype'].pop(i)
                 db = json.dumps(db, indent=self.indent_for_json)
                 json_writer.write(db)
     def get_current_learntypedata(self) -> list:
-        data = self.get_database()['learn']['learntype']
-        return data
+        return self.get_database()['learn']['learntype']
+    #действия со сроками обучения
 def main():
     db = Database()
     db.path = r'database.json'
