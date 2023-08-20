@@ -178,20 +178,6 @@ class Ui_MainWindow(object):
 "border-radius: 6px;\n"
 "color: white;")
         self.btn_delete_learntime.setObjectName("btn_delete_learntime")
-        self.tableView_learntype = QtWidgets.QTableView(parent=self.centralwidget)
-        self.tableView_learntype.setGeometry(QtCore.QRect(380, 120, 211, 161))
-        self.tableView_learntype.setStyleSheet("background-color: rgba(39, 176, 87, 0.4);\n"
-"border: 1px solid rgba(255,255,255, 0.4);\n"
-"border-radius: 6px;\n"
-"color: white;")
-        self.tableView_learntype.setObjectName("tableView_learntype")
-        self.tableView_learntime = QtWidgets.QTableView(parent=self.centralwidget)
-        self.tableView_learntime.setGeometry(QtCore.QRect(630, 120, 211, 161))
-        self.tableView_learntime.setStyleSheet("background-color: rgba(39, 176, 87, 0.4);\n"
-"border: 1px solid rgba(255,255,255, 0.4);\n"
-"border-radius: 6px;\n"
-"color: white;")
-        self.tableView_learntime.setObjectName("tableView_learntime")
         self.label_9 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_9.setGeometry(QtCore.QRect(70, 130, 151, 31))
         self.label_9.setStyleSheet("background-color: rgba(39, 176, 87, 1);\n"
@@ -266,6 +252,12 @@ class Ui_MainWindow(object):
         self.tableWidget.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(2, item)
+        self.comboBox_access_2 = QtWidgets.QComboBox(parent=self.centralwidget)
+        self.comboBox_access_2.setGeometry(QtCore.QRect(380, 130, 211, 31))
+        self.comboBox_access_2.setStyleSheet("background-color: rgba(39, 176, 87, 0.7);\n"
+"border: 1px solid rgba(255,255,255, 0.4);\n"
+"color: white;")
+        self.comboBox_access_2.setObjectName("comboBox_access_2")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)

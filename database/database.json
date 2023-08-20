@@ -1,1 +1,17 @@
-{"users": {"login": ["admin"], "password": ["admin"], "access": ["admin"]}, "learn": {"learntype": [], "learntime": []}}
+{
+    "users": {
+        "login": [
+            "admin"
+        ],
+        "password": [
+            "admin"
+        ],
+        "access": [
+            "admin"
+        ]
+    },
+    "learn": {
+        "learntype": [],
+        "learntime": []
+    }
+}

@@ -329,20 +329,6 @@ class Ui_adminpanel(object):
                                                 "border-radius: 6px;\n"
                                                 "color: white;")
         self.btn_delete_learntime.setObjectName("btn_delete_learntime")
-        self.tableView_learntype = QtWidgets.QTableView(parent=self.centralwidget)
-        self.tableView_learntype.setGeometry(QtCore.QRect(380, 120, 211, 161))
-        self.tableView_learntype.setStyleSheet("background-color: rgba(39, 176, 87, 0.4);\n"
-                                               "border: 1px solid rgba(255,255,255, 0.4);\n"
-                                               "border-radius: 6px;\n"
-                                               "color: white;")
-        self.tableView_learntype.setObjectName("tableView_learntype")
-        self.tableView_learntime = QtWidgets.QTableView(parent=self.centralwidget)
-        self.tableView_learntime.setGeometry(QtCore.QRect(630, 120, 211, 161))
-        self.tableView_learntime.setStyleSheet("background-color: rgba(39, 176, 87, 0.4);\n"
-                                               "border: 1px solid rgba(255,255,255, 0.4);\n"
-                                               "border-radius: 6px;\n"
-                                               "color: white;")
-        self.tableView_learntime.setObjectName("tableView_learntime")
         self.label_9 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_9.setGeometry(QtCore.QRect(70, 130, 151, 31))
         self.label_9.setStyleSheet("background-color: rgba(39, 176, 87, 1);\n"
@@ -417,6 +403,12 @@ class Ui_adminpanel(object):
         self.tableWidget.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(2, item)
+        self.comboBox_access_2 = QtWidgets.QComboBox(parent=self.centralwidget)
+        self.comboBox_access_2.setGeometry(QtCore.QRect(380, 130, 211, 31))
+        self.comboBox_access_2.setStyleSheet("background-color: rgba(39, 176, 87, 0.7);\n"
+                                             "border: 1px solid rgba(255,255,255, 0.4);\n"
+                                             "color: white;")
+        self.comboBox_access_2.setObjectName("comboBox_access_2")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -454,8 +446,11 @@ class Ui_adminpanel(object):
         self.btn_exit.clicked.connect(self.exit)
         self.btn_add_user.clicked.connect(self.add_user_in_database)
         self.btn_delete_user.clicked.connect(self.del_user_in_database)
-
         self.load_current_userdata()
+
+        self.btn_add_learntype.clicked.connect(self.add_learntype)
+        self.btn_delete_learntype.clicked.connect(self.del_learntype)
+        self.load_current_learntypedata()
 
     def add_user_in_database(self):
         login = self.lineEdit_login.text()
@@ -489,7 +484,28 @@ class Ui_adminpanel(object):
             self.tableWidget.setItem(row, 0, QtWidgets.QTableWidgetItem(data['login'][row]))
             self.tableWidget.setItem(row, 1, QtWidgets.QTableWidgetItem(data['password'][row]))
             self.tableWidget.setItem(row, 2, QtWidgets.QTableWidgetItem(data['access'][row]))
+    def add_learntype(self):
+        learntype = self.lineEdit_learntype.text()
+        self.lineEdit_learntype.clear()
 
+        db = Database()
+        db.create_learntype(learntype)
+
+        self.load_current_learntypedata()
+    def del_learntype(self):
+        learntype = self.lineEdit_learntype.text()
+        self.lineEdit_learntype.clear()
+
+        db = Database()
+        db.delete_learntype(learntype)
+
+        self.load_current_learntypedata()
+    def load_current_learntypedata(self) -> None:
+        self.comboBox_access_2.clear()
+        db = Database()
+        data = db.get_current_learntypedata()
+        for i in range(len(data)):
+            self.comboBox_access_2.addItem(data[i])
 
 if __name__ == "__main__":
     import sys
