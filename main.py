@@ -403,12 +403,20 @@ class Ui_adminpanel(object):
         self.tableWidget.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(2, item)
-        self.comboBox_access_2 = QtWidgets.QComboBox(parent=self.centralwidget)
-        self.comboBox_access_2.setGeometry(QtCore.QRect(380, 130, 211, 31))
-        self.comboBox_access_2.setStyleSheet("background-color: rgba(39, 176, 87, 0.7);\n"
-                                             "border: 1px solid rgba(255,255,255, 0.4);\n"
-                                             "color: white;")
-        self.comboBox_access_2.setObjectName("comboBox_access_2")
+        self.combobox_learntype = QtWidgets.QComboBox(parent=self.centralwidget)
+        self.combobox_learntype.setGeometry(QtCore.QRect(380, 130, 211, 31))
+        self.combobox_learntype.setStyleSheet("background-color: rgba(39, 176, 87, 0.7);\n"
+                                              "border: 1px solid rgba(255,255,255, 0.4);\n"
+                                              "color: white;")
+        self.combobox_learntype.setObjectName("combobox_learntype")
+        self.label_learntime = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_learntime.setGeometry(QtCore.QRect(630, 130, 211, 31))
+        self.label_learntime.setStyleSheet("background-color: rgba(39, 176, 87, 1);\n"
+                                           "border: 1px solid rgba(255,255,255, 0.4);\n"
+                                           "border-radius: 6px;\n"
+                                           "color: white;")
+        self.label_learntime.setText("")
+        self.label_learntime.setObjectName("label_learntime")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -452,7 +460,7 @@ class Ui_adminpanel(object):
         self.btn_delete_learntype.clicked.connect(self.del_learntype)
         self.load_current_learntypedata()
 
-        self.comboBox_access_2.currentTextChanged.connect(self.change_item_in_learntype)
+        self.combobox_learntype.currentTextChanged.connect(self.change_item_in_learntype)
 
     def add_user_in_database(self):
         login = self.lineEdit_login.text()
@@ -503,19 +511,20 @@ class Ui_adminpanel(object):
 
         self.load_current_learntypedata()
     def load_current_learntypedata(self) -> None:
-        self.comboBox_access_2.clear()
+        self.combobox_learntype.clear()
         db = Database()
         data = db.get_current_learntypedata()
         for i in range(len(data)):
-            self.comboBox_access_2.addItem(data[i]['name'])
+            self.combobox_learntype.addItem(data[i]['name'])
     def change_item_in_learntype(self):
-        choice = self.comboBox_access_2.currentText()
+        choice = self.combobox_learntype.currentText()
         #обновить строку
         db = Database()
         data = db.get_current_learntypedata()
         for item in data:
             if item['name'] == choice:
                 print(item)
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

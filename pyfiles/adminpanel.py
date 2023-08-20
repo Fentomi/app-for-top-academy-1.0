@@ -252,12 +252,20 @@ class Ui_MainWindow(object):
         self.tableWidget.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(2, item)
-        self.comboBox_access_2 = QtWidgets.QComboBox(parent=self.centralwidget)
-        self.comboBox_access_2.setGeometry(QtCore.QRect(380, 130, 211, 31))
-        self.comboBox_access_2.setStyleSheet("background-color: rgba(39, 176, 87, 0.7);\n"
+        self.combobox_learntype = QtWidgets.QComboBox(parent=self.centralwidget)
+        self.combobox_learntype.setGeometry(QtCore.QRect(380, 130, 211, 31))
+        self.combobox_learntype.setStyleSheet("background-color: rgba(39, 176, 87, 0.7);\n"
 "border: 1px solid rgba(255,255,255, 0.4);\n"
 "color: white;")
-        self.comboBox_access_2.setObjectName("comboBox_access_2")
+        self.combobox_learntype.setObjectName("combobox_learntype")
+        self.label_learntime = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_learntime.setGeometry(QtCore.QRect(630, 130, 211, 31))
+        self.label_learntime.setStyleSheet("background-color: rgba(39, 176, 87, 1);\n"
+"border: 1px solid rgba(255,255,255, 0.4);\n"
+"border-radius: 6px;\n"
+"color: white;")
+        self.label_learntime.setText("")
+        self.label_learntime.setObjectName("label_learntime")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
