@@ -464,6 +464,7 @@ class Ui_adminpanel(object):
         self.combobox_learntype.currentTextChanged.connect(self.change_item_in_learntype)
 
         self.btn_add_learntime.clicked.connect(self.add_learntime)
+        self.btn_delete_learntime.clicked.connect(self.del_learntime)
 
     def add_user_in_database(self):
         login = self.lineEdit_login.text()
@@ -513,6 +514,7 @@ class Ui_adminpanel(object):
         db.delete_learntype(learntype)
 
         self.load_current_learntypedata()
+        self.label_learntime.setText("")
     def load_current_learntypedata(self) -> None:
         self.combobox_learntype.clear()
         db = Database()
@@ -536,7 +538,13 @@ class Ui_adminpanel(object):
         db.create_learntime(choice, learntime)
 
         self.change_item_in_learntype()
+    def del_learntime(self):
+        choice = self.combobox_learntype.currentText()
 
+        db = Database()
+        db.delete_learntime(choice)
+
+        self.change_item_in_learntype()
 
 
 if __name__ == "__main__":

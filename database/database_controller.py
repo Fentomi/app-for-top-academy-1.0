@@ -105,8 +105,8 @@ class Database():
 def main():
     db = Database()
     db.path = r'database.json'
-    # db.db_reset()
-    #
+    db.db_reset()
+
     # db.create_learntype('МКА', '12 месяцев')
     # db.create_learntype('ПШ', '20 месяцев')
     # db.delete_learntime('ПШ')
